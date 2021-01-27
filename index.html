@@ -1,11 +1,211 @@
+<!DOCTYPE html>
 <html>
 <head>
+<title>Page Title</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <style>
-body {text-align: center;}
+@import url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2);
+body {margin: 0%;}
+.content3 h2 {font-family: serif; font-weight: normal;}
+.box {
+	background-color: #b3d4fc;
+    color: black;
+    font-family: serif;
+}
+.covid19 {background-color: #DB4437; color: white; font-family: serif; text-align: center; padding: 10px;}
+.covid19 a {color: white; opacity: 40%; text-decoration: none; transition: opacity 0.2s ease 0s;}
+.covid19 a:hover {opacity: 50%;}
+.youtube {background: linear-gradient(to right, #b3d4fc 45%, transparent 40%), url("https://pbs.twimg.com/profile_banners/1252313205478735872/1610978967/1500x500"); background-attachment: fixed;}
+.twitch {background: linear-gradient(to left, #b3d4fc 45%, transparent 40%), url("https://pbs.twimg.com/profile_banners/1252313205478735872/1610978967/1500x500"); background-attachment: fixed;}
+.bottom.btn {
+	border: 2px solid black;
+    color: black;
+    background-image: linear-gradient(to bottom, #b3d4fc 50%, black 50%);
+    font-family: serif;
+    font-weight: bold;
+    padding: 10px 0px;
+    width: 23%;
+    font-size: 16px;
+    background-size: 100% 200%;
+    transition: .4s cubic-bezier(0,.5,0,1);
+    cursor: pointer;
+}
+.bottom.btn:hover {
+	color: #b3d4fc;
+    background-position: 0 -100%;
+}
+input {
+	border: 2px solid black;
+    color: black;
+    background-color: white;
+    font-family: serif;
+    font-weight: bold;
+    padding: 10px 7px;
+    width: 30%;
+    font-size: 16px;
+    background-size: 100% 200%;
+    transition: .4s cubic-bezier(0,.5,0,1);
+    
+}
+
+.content1 {padding: 5%; text-align: right;}
+.content2 {padding: 5%; text-align: left;}
+.content3 {padding: 5%; text-align: center;}
+
+html:not([data-scroll='0']) .navbar {
+  top: 0;
+  transition: 0.5s;
+}
+.navbar {
+	box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 3;
+    width: 100%;
+    background-color: white;
+    transition: top .25s;
+}
+.crowdmade {
+	background-color: #2b2a27;
+    color: white;
+}
+.crowdmadebtn {
+	color: #fff;
+    background: #111;
+    border: 2px solid #111;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 13px;
+    padding: 11px 20px;
+	transition: background 0.2s ease 0s;
+    transition-property: background;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    font-family: Verdana;
+    cursor: pointer;
+}
+.crowdmadebtn:hover {border: 2px solid #111; background: #2b2b2b; transition-delay: 0.25s;}
+.teespring {
+	background-color: #f6f6f9;
+}
+.teespringbtn {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.4375rem 1.75rem;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    background: #ee2761;
+    border: 1px solid #ee2761;
+    font-family: sans-serif;
+}
+.teespringbtn:hover {
+    background: #af1e48;
+    border: 1px solid #af1e48;
+}
+.footer {
+	font-family: serif;
+	color: white;
+    background-color: #222;
+    text-align: center;
+    padding: 2%;
+}
+.
 </style>
 </head>
 <body>
-<h1>This is my web server</h1>
-<p>Please go somewhere else</p>
+<script>
+// The debounce function receives our function as a parameter
+const debounce = (fn) => {
+
+  // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+  let frame;
+
+  // The debounce function returns a new function that can receive a variable number of arguments
+  return (...params) => {
+    
+    // If the frame variable has been defined, clear it now, and queue for next frame
+    if (frame) { 
+      cancelAnimationFrame(frame);
+    }
+
+    // Queue our function call for the next frame
+    frame = requestAnimationFrame(() => {
+      
+      // Call our function and pass any params we received
+      fn(...params);
+    });
+
+  } 
+};
+
+
+// Reads out the scroll position and stores it in the data attribute
+// so we can use it in our stylesheets
+const storeScroll = () => {
+  document.documentElement.dataset.scroll = window.scrollY;
+}
+
+// Listen for new scroll events, here we debounce our `storeScroll` function
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+// Update scroll position for first time
+storeScroll();
+</script>
+<div class="covid19">
+<b>Due to COVID-19, products from merch stores will take longer to ship.</b> <a href="#ignore" title="NOTE: If you scroll up again, this message will appear.">OK</a>
+</div>
+<div class="navbar">
+<img src="https://i.imgur.com/eihRyUf.png" width="auto" height="50px">
+</div>
+<div class="content3" id="ignore">
+<Br><br><br>
+<img src="https://i.imgur.com/eihRyUf.png" width="auto" height="80px">
+<h2><i>Just your average content creator.</i></h2>
+</div>
+<div class="box youtube">
+<div class="content2">
+<h1>I make videos.</h1>
+<a href="https://www.youtube.com/channel/UCY4NxoDpAnjOXXeCA2oK72g"><button class="bottom btn">Watch Now</button></a>
+<br><br><br>
+</div>
+</div>
+<div class="box twitch">
+<div class="content1">
+<h1>I also stream.</h1>
+<a href="https://twitch.tv/lexiolvsu"><button class="bottom btn">Twitch</button></a>
+<br><br>
+</div>
+</div>
+<div class="crowdmade" style="display: none;">
+<div class="content2">
+<br>
+<img src="https://i.imgur.com/vB6TBpU.png"><br>
+<p><img src="https://i.imgur.com/NAmUnEc.png"></p>
+<a href="#"><button class="crowdmadebtn">Crowdmade</button></a>
+<br><br>
+</div>
+</div>
+<div class="footer">
+<h3>© Copyright lexiolvsu 2021</h3>
+<br>
+<h1>Newsletter</h1>
+<form>
+<input type="email" placeholder="Not Available :(" action="/formSubmit/newsletter-thanks/" disabled></input><input type="submit" class="bottom btn" value="Subscribe" disabled></input>
+</form>
+</div>
 </body>
 </html>
