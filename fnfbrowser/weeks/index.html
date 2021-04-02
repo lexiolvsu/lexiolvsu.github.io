@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Friday Night Funkin' Browser</title>
+<link rel="shortcut icon" type="image/jpg" href="https://github.com/ninjamuffin99/Funkin/blob/master/art/iconOG.png?raw=true"/>
+<style>
+body {
+    background-image: url('https://github.com/ninjamuffin99/Funkin/blob/master/assets/preload/images/menuBG.png?raw=true');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    text-align: center;
+}
+#wrapper {
+    padding: 40px;
+    margin: auto;
+}
+button {
+	background: url("https://raw.githubusercontent.com/HaxeFlixel/flixel/dev/assets/images/ui/button.png");
+    width: 80px;
+    height: 20px;
+    border: none;
+    background-position: -0px -20px;
+    font-weight: bold;
+}
+button:hover {
+    background-position: -0px 0px;
+}
+button:active {
+	background-position: -0px 20px;
+}
+</style>
+</head>
+<body>
+<audio autoplay="" loop="">
+<source src="https://github.com/lexiolvsu/lexiolvsu.github.io/blob/main/fnfbrowser/configurator.ogg?raw=true">
+</audio>
+<div id="wrapper">
+<img src="https://raw.githubusercontent.com/lexiolvsu/lexiolvsu.github.io/main/fnfbrowser/songs/comingsoon.png" width="auto" height="60">
+<br>
+<br>
+<button onclick="goBack()">Go back</button>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</div>
+</body>
+</html>
